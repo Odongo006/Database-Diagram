@@ -34,6 +34,7 @@ total_price decimal,
 invoice_id int references invoices(id),
 treatment_id int references treatments(id));
 
+--  ADD FK INDEXES 
 
 CREATE INDEX patient_id_index ON medical_histories (patient_id);
 
@@ -43,6 +44,7 @@ CREATE INDEX invoice_id_index ON invoices_items(invoice_id);
 
 CREATE INDEX treatment_id_index ON invoices_items(treatment_id);
 
-CREATE INDEX treatment_id_index ON treatments_histories(treatment_id);
 
 CREATE INDEX medical_history_index ON treatments_histories(medical_history_id);
+
+CREATE INDEX treatment_id_index ON treatments_histories(treatment_id);
